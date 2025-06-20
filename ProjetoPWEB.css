@@ -181,7 +181,8 @@ input {
 
 .menu-lateral {
     min-width: 150px;
-    height: 215px;
+    min-height: 215px;
+    max-height: 250px;
     background-color: #1a1a1a;
     padding: 15px;
     border-radius: 20px;
@@ -233,50 +234,17 @@ input {
 
 
 
-.filme-container {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-    color: #FFC70D;
-}
+
 
 .poster img {
     max-width: 150px;
     height: auto;
     border-radius: 15px;
-    box-shadow: 0px 4px 10px #000000;
-}
-
-.detalhes {
-    max-width: 800px;
-}
-
-.detalhes h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
 }
 
 .detalhes p {
     font-size: 20px;
     margin-bottom: 20px;
-}
-
-#info p {
-    margin: 8px 0;
-    font-size: 18px;
-}
-
-.botao-voltar {
-    margin-top: 30px;
-}
-
-.botao-voltar a {
-    background-color: #FFC70D;
-    color: #000;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 .botao-voltar a:hover {
