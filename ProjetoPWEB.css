@@ -1,4 +1,4 @@
-img {
+.logo {
     max-width: 80px;
     height: auto;
     margin: 0 auto;
@@ -30,12 +30,9 @@ h1 {
     color: #FFC70D;
     font-family: 'Inter', sans-serif;
     text-align: center;
-    font-size: 80px;
-    min-height: 63vh;
+    font-size: 17px;
     margin: 15px;
     position: relative;
-    display: flex;
-    flex-direction: column;
     padding: 25px;
 }
 
@@ -167,29 +164,23 @@ input {
     }
 }
 
-.botao:hover {
-    background-color: #e6b800;
-}
-
 .perfil-container {
     display: flex;
-    min-height: 100vh;
+    flex-direction: row;
     background-color: black;
     color: #FFC70D;
     font-family: 'Inter', sans-serif;
 }
 
 .menu-lateral {
-    min-width: 150px;
-    min-height: 215px;
-    max-height: 250px;
     background-color: #1a1a1a;
     padding: 15px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
     font-size: 30px;
+    max-height: fit-content;
+    width: 200px;
 }
 
 .menu-opcao a {
@@ -201,14 +192,6 @@ input {
     transition: background-color 0.3s;
     font-size: 20px;
     text-decoration: none;
-}
-
-.menu-opcao a:hover {
-    background-color: #555555;
-}
-
-.filme:hover {
-    background-color: #444444;
 }
 
 .lista-filmes {
@@ -226,16 +209,6 @@ input {
     transition: transform 0.3s;
 }
 
-.lista-filmes img:hover {
-    transform: scale(1.05);
-}
-
-
-
-
-
-
-
 .poster img {
     max-width: 150px;
     height: auto;
@@ -247,6 +220,79 @@ input {
     margin-bottom: 20px;
 }
 
-.botao-voltar a:hover {
-    background-color: #e6b800;
+.lista-filmes a {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+/* Estilização dos cards */
+a {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+a img {
+    border-radius: 10px;
+    transition: transform 0.3s, border 0.3s;
+}
+
+
+.filme-titulo {
+    margin-top: 8px;
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+}
+
+.lista-filmes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.conteudo-principal {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* ⬅️ ESSENCIAL */
+}
+
+.barra-pesquisa {
+    margin-bottom: 20px;
+}
+
+.barra-pesquisa input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.filme-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+}
+
+.icone-favorito {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.titulo-filme {
+    color: white;
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.icone-favorito:hover {
+    transform: scale(1.2);
 }
