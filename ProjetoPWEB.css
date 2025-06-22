@@ -70,26 +70,6 @@ h1 {
     font-weight: bolder;
 }
 
-.textobotao {
-    color: #000000;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    vertical-align: center;
-}
-
-.botao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFC70D;
-    height: 40px;
-    width: 150px;
-    filter: drop-shadow(0px 4px 4px #705c1b);
-    border-radius: 15px;
-    cursor: pointer;
-}
-
 .botao-container {
     margin-top: auto;
     margin-bottom: 25px;
@@ -104,12 +84,14 @@ a.botao {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: inherit;
     height: 40px;
     width: 150px;
     background-color: #FFC70D;
     border-radius: 15px;
     filter: drop-shadow(0px 4px 4px #000000);
+    color: #000000;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .exemplo {
@@ -288,11 +270,35 @@ a img {
 }
 
 .titulo-filme {
-    color: white;
+    color: #FFC70D;
     font-size: 18px;
     margin-top: 6px;
 }
 
 .icone-favorito:hover {
     transform: scale(1.2);
+    transition: 0.3s;
+}
+
+a.botao:hover {
+    background-color: #d0a701;
+    transition: 0.3s;
+}
+
+a.botao:active {
+    transform: scale(0.95);
+}
+
+.menu-opcao a:hover{
+    background-color: #686868;
+    transition: 0.3s;
+}
+
+.menu-opcao a:active {
+    transform: scale(0.95);
+}
+
+.lista-filmes img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
 }

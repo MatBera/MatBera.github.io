@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const nomeUsuario = localStorage.getItem('nomeUsuario');
     const campoNome = document.getElementById('usuario-nome');
 
-    // 🟦 Mostrar nome do usuário no perfil
     if (campoNome && nomeUsuario) {
         campoNome.textContent = `Olá, ${nomeUsuario}`;
     }
 
-    // 🟦 Login
+    // Login do usuário
     const botaoLogar = document.getElementById('botaoLogin');
     if (botaoLogar) {
         botaoLogar.addEventListener('click', function (event) {
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🟦 Cadastro
+    // Cadastro do usuário
     const botaoCadastrar = document.getElementById('botaoCadastrar');
     if (botaoCadastrar) {
         botaoCadastrar.addEventListener('click', function (event) {
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🟨 Função para criar o elemento do filme (poster, título, estrela)
+    // Criar poster dos filmes
     function criarElementoFilme(filme) {
         const item = document.createElement('div');
         item.classList.add('filme-item');
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         estrela.alt = 'Favoritar';
         estrela.classList.add('icone-favorito');
 
-        // ⭐ Evento para alternar favorito
+        // Favoritar filme
         estrela.addEventListener('click', (event) => {
             event.preventDefault(); // não abre o link
             event.stopPropagation();
@@ -99,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return item;
     }
 
-    // 🟦 Função: carregar filmes
+    // Importar filmes da API
     async function carregarFilmes() {
         if (carregando) return;
         carregando = true;
@@ -127,12 +126,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const inputPesquisa = document.getElementById('input-pesquisa');
 
+    // Pesquisar filmes na lista
     if (inputPesquisa) {
         inputPesquisa.addEventListener('input', async function () {
             const termo = inputPesquisa.value.trim();
 
             if (termo === "") {
-                // Se a pesquisa estiver vazia, limpa a lista e recarrega os filmes populares
                 lista.innerHTML = "";
                 paginaAtual = 1;
                 carregarFilmes();
@@ -163,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🟦 Scroll infinito (opcional)
+    // Scroll infinito para carregar menos coisas quando abre a página
     if (lista && lista.id === 'lista-filmes') {
         carregarFilmes();
 
@@ -180,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🟦 Carregar favoritos na página Favoritos
+    // Importar filmes favoritados
     if (lista && lista.id === 'lista-favoritos') {
         carregarFavoritos();
     }
@@ -194,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // 🟨 Favoritos - salvar no LocalStorage
+    // Salvar os filmes favoritos localmente
     function adicionarFavorito(filme) {
         let favoritos = JSON.parse(localStorage.getItem('filmesFavoritos')) || [];
 
@@ -219,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return favoritos.some(f => f.id === id);
     }
 
-    // 🟦 Carregar detalhes do filme
+    // Importar detalhes dos filmes
     const poster = document.getElementById('poster');
     const titulo = document.getElementById('titulo');
     const sinopse = document.getElementById('sinopse');
